@@ -8,8 +8,8 @@
     {
         private static void Main()
         {
-            Board board = BoardReader.ReadFromFile(@"Puzzles\20x20xHard.txt");
-            //Board board = BoardReader.ReadFromConsole();
+            //Board board = BoardReader.ReadFromFile(@"Puzzles\20x20xHard.txt");
+            Board board = BoardReader.ReadFromConsole();
             board.Solve();
             Console.WriteLine(board.Print(false, false));
         }
