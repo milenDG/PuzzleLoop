@@ -162,7 +162,7 @@ namespace PuzzleBot.BoardClasses
                         builder.Append(this.Cells[i, j].LeftLine.Print(forbids, weights));
                     }
 
-                    builder.Append((int) this.Cells[i, j].CellState < 4 ? $" {(int)this.Cells[i, j].CellState} " : "   ");
+                    builder.Append((int) this.Cells[i, j].CellValue < 4 ? $" {(int)this.Cells[i, j].CellValue} " : "   ");
 
                     builder.Append(this.Cells[i, j].RightLine.Print(forbids, weights));
                 }

@@ -13,12 +13,12 @@ namespace PuzzleBot.BoardClasses
         public Dot TopRight { get; private set; }
         public Dot BottomLeft { get; private set; }
         public Dot BottomRight { get; private set; }
-        public CellState CellState { get; }
+        public CellState CellValue { get; }
         public bool IsReady { get; set; }
 
         public Cell(int cellNumber, Line topLine, Line bottomLine, Line leftLine, Line rightLine)
         {
-            this.CellState = cellNumber switch
+            this.CellValue = cellNumber switch
             {
                 4 => CellState.Empty,
                 0 => CellState.Zero,
@@ -55,7 +55,7 @@ namespace PuzzleBot.BoardClasses
                 left = cell.BottomLine, 
                 right = cell.TopLine;
 
-            Cell outCell = new Cell((int) cell.CellState, top, bottom, left, right)
+            Cell outCell = new Cell((int) cell.CellValue, top, bottom, left, right)
             {
                 TopLeft = Dot.Turn90(cell.BottomLeft),
                 TopRight = Dot.Turn90(cell.TopLeft),

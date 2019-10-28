@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuzzleBot", "PuzzleBot\PuzzleBot.csproj", "{616FB33B-C720-4899-8053-DBFF97DA7D98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuzzleBot.App", "PuzzleBot\PuzzleBot.App.csproj", "{616FB33B-C720-4899-8053-DBFF97DA7D98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuzzleBot.Test", "PuzzleBot.Test\PuzzleBot.Test.csproj", "{D26DB6D1-3D88-4EDF-BFAE-E00EA26CA4B7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{616FB33B-C720-4899-8053-DBFF97DA7D98} = {616FB33B-C720-4899-8053-DBFF97DA7D98}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{616FB33B-C720-4899-8053-DBFF97DA7D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{616FB33B-C720-4899-8053-DBFF97DA7D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{616FB33B-C720-4899-8053-DBFF97DA7D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26DB6D1-3D88-4EDF-BFAE-E00EA26CA4B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26DB6D1-3D88-4EDF-BFAE-E00EA26CA4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26DB6D1-3D88-4EDF-BFAE-E00EA26CA4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26DB6D1-3D88-4EDF-BFAE-E00EA26CA4B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

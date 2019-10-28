@@ -43,12 +43,12 @@ namespace PuzzleBot.SolvingRules
             {
                 for (int j = 0; j < cells.GetLength(1); j++)
                 {
-                    if (!cells[i, j].IsReady && (int)cells[i, j].CellState != 4)
+                    if (!cells[i, j].IsReady && (int)cells[i, j].CellValue != 4)
                     {
                         Cell cell90 = Cell.Turn90(cells[i, j]),
                             cell180 = Cell.Turn90(cell90),
                             cell270 = Cell.Turn90(cell180);
-                        hasChanged = (int) cells[i, j].CellState switch
+                        hasChanged = (int) cells[i, j].CellValue switch
                         {
                             3 when SubMultiSolvingRules.SubReadyThreeCell(cells[i, j]) ||
                                    SubMultiSolvingRules.SubReadyThreeCell(cell90) ||

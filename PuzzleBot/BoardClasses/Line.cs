@@ -38,7 +38,7 @@ namespace PuzzleBot.BoardClasses
                     }
                     else
                     {
-                        builder.Append(this.IsVertical ? "|" : "———");
+                        builder.Append(this.IsVertical ? "│" : "───");
                     }
                     break;
                 case LineState.Forbidden:

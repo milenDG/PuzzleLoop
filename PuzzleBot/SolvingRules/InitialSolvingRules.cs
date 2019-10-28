@@ -16,7 +16,7 @@ namespace PuzzleBot.SolvingRules
         {
             foreach (var cell in cells)
             {
-                if(cell.CellState == 0
+                if(cell.CellValue == 0
                    && ((cell.TopLine.LineState == LineState.Disconnected ||
                         cell.BottomLine.LineState == LineState.Disconnected ||
                         cell.LeftLine.LineState == LineState.Disconnected ||
@@ -38,9 +38,9 @@ namespace PuzzleBot.SolvingRules
         public static void ThreeNeighbourCells(Cell[, ] cells) {
             for (int i = 0; i < cells.GetLength(0); i++) {
                 for (int j = 0; j < cells.GetLength(1); j++) {
-                    if((int) cells[i, j].CellState == 3) {
+                    if((int) cells[i, j].CellValue == 3) {
                         if(i < cells.GetLength(0) - 1) {
-                            if((int) cells[i + 1, j].CellState == 3) {
+                            if((int) cells[i + 1, j].CellValue == 3) {
                                 cells[i, j].TopLine.Connect();;
                                 cells[i, j].BottomLine.Connect();
                                 cells[i + 1, j].BottomLine.Connect();
@@ -53,7 +53,7 @@ namespace PuzzleBot.SolvingRules
                             }
                         }
                         if(j < cells.GetLength(1) - 1) {
-                            if((int) cells[i, j + 1].CellState == 3) {
+                            if((int) cells[i, j + 1].CellValue == 3) {
                                 cells[i, j].LeftLine.Connect();
                                 cells[i, j].RightLine.Connect();
                                 cells[i, j + 1].RightLine.Connect();
@@ -80,14 +80,14 @@ namespace PuzzleBot.SolvingRules
         public static void ThreeWithTwosBetween(Cell[, ] cells) {
             for (int i = 0; i < cells.GetLength(0); i++) {
                 for (int j = 0; j < cells.GetLength(1); j++) {
-                    if((int) cells[i, j].CellState == 3) {
+                    if((int) cells[i, j].CellValue == 3) {
                         for (int k = 1; i + k < cells.GetLength(0) && j + k < cells.GetLength(1); k++)
                         {
                             Cell current = cells[i + k, j + k];
-                            if ((int) current.CellState != 3 && (int) current.CellState != 2){
+                            if ((int) current.CellValue != 3 && (int) current.CellValue != 2){
                                 break;
                             }
-                            else if((int) current.CellState == 3) {
+                            else if((int) current.CellValue == 3) {
                                 if(cells[i, j].LeftLine.LineState == LineState.Disconnected
                                    || cells[i, j].TopLine.LineState == LineState.Disconnected
                                    || current.BottomLine.LineState == LineState.Disconnected
@@ -103,10 +103,10 @@ namespace PuzzleBot.SolvingRules
                         for (int k = 1; i + k < cells.GetLength(0) && j - k >= 0; k++)
                         {
                             Cell current = cells[i + k, j - k];
-                            if ((int) current.CellState != 3 && (int) current.CellState != 2){
+                            if ((int) current.CellValue != 3 && (int) current.CellValue != 2){
                                 break;
                             }
-                            else if((int) current.CellState == 3) {
+                            else if((int) current.CellValue == 3) {
                                 if(cells[i, j].RightLine.LineState == LineState.Disconnected
                                    || cells[i, j].TopLine.LineState == LineState.Disconnected
                                    || current.BottomLine.LineState == LineState.Disconnected

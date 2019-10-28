@@ -9,7 +9,7 @@
     {
         public static Board ReadFromFile(string path)
         {
-            string[] content = File.ReadAllText(path).Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+            string[] content = File.ReadAllText(path).Split(new []{Environment.NewLine, "\n"}, StringSplitOptions.RemoveEmptyEntries);
 
             string[] inputDimensions = content[0].Split(" ", StringSplitOptions.RemoveEmptyEntries);
             int height = int.Parse(inputDimensions?[0] ?? throw new InvalidOperationException());

@@ -15,7 +15,7 @@
                 {
                     if (!cells[i, j].IsReady)
                     {
-                        if (cellState.HasValue && (int)cells[i, j].CellState != cellState)
+                        if (cellState.HasValue && (int)cells[i, j].CellValue != cellState)
                         {
                             continue;
                         }
